@@ -1,0 +1,25 @@
+.bme-icon {
+	color: white;
+	display: inline;
+}
+
+.bme-text{
+	margin-left: 15px;
+}
+
+.bme-header {
+	border-bottom: 1px solid #666;
+}
+
+.bme-td-icon
+{
+	width: 15px;
+}
+
+.bme{
+	float: left;
+}
+
+table{
+	margin-top: 10px;
+}

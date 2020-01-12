@@ -1,0 +1,10 @@
+{
+  "name": "mmm-bme280",
+  "version": "1.0.0",
+  "description": "",
+  "author": "awitwicki",
+  "license": "MIT",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "latest"
+  }
+}
