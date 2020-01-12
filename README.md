@@ -3,14 +3,14 @@
 This an extension for the [MagicMirror²](https://github.com/MichMich/MagicMirror).
 It monitors temperature, humidity and air pressure from [BME-280 sensor](https://www.bosch-sensortec.com/products/environmental-sensors/humidity-sensors-bme280).
 
-<img src=".github/example.jpg">
+<img src=".github/example.png">
 
 ## Installation
 1. Navigate into your MagicMirror's `modules` folder
 2. Clone repository `git clone https://github.com/awitwicki/MMM-BME280`
 3. Go to newly created directory
 4. Execute `npm install` to install the node dependencies.
-5. Connect the BME280 module to your Raspberry Pi
+5. Connect the BME280 to your Raspberry Pi
 <img src=".github/connect.jpg">
 
 ## Using the module
@@ -25,7 +25,8 @@ modules: [
 		position: 'top_left',
 		config: {
 			updateInterval: 5 //seconds
-		},
+			}
+	},
 	...
 ]
 ````
@@ -77,6 +78,7 @@ For more details about BCM pin numbers check [here](http://www.raspberrypi-spy.c
 ### Thanks
 
 [MMM-DHT-Sensor module](https://github.com/bernardpletikosa/MMM-DHT-Sensor)
+
 [Using the BME280 I2C Temperature and Pressure Sensor in Python](https://www.raspberrypi-spy.co.uk/2016/07/using-bme280-i2c-temperature-pressure-sensor-in-python/)
 
 
