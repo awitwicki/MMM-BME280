@@ -1,6 +1,6 @@
 # MMM-BME280
 
-This an extension for the [MagicMirror²](https://github.com/MichMich/MagicMirror).
+This is an extension for the [MagicMirror²](https://github.com/MichMich/MagicMirror).
 It monitors temperature, humidity and air pressure from [BME-280 sensor](https://www.bosch-sensortec.com/products/environmental-sensors/humidity-sensors-bme280).
 
 <img src=".github/example.png">
@@ -70,10 +70,10 @@ For more details about BCM pin numbers check [here](http://www.raspberrypi-spy.c
 ### Test BME280 module
 1. Navigate into your **MagicMirror**  folder
 2. Run .sh script `./modules/MMM-BME280/bme.sh`
-(If script not runs, add exec parameter to it)
+(If script doesn't run, add exec parameter to it)
 `sudo chmod +x modules/MMM-BME280/bme.sh`.
-3. Script should print sensor values
-`24.7 38.3 996.6` - thats means `temperature humidity pressure`
+3. Script should print sensor values like this
+`24.7 38.3 996.6` - that means `temperature humidity pressure`
 
 ### Thanks
 
