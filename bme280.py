@@ -19,6 +19,7 @@
 #
 #--------------------------------------
 import smbus
+import sys
 import time
 from ctypes import c_short
 from ctypes import c_byte
@@ -26,6 +27,10 @@ from ctypes import c_ubyte
 
 DEVICE = 0x76 # Default device I2C address
 
+try: #override device address like '0x77'
+    DEVICE = int(sys.argv[1], 16)
+except:
+    pass
 
 bus = smbus.SMBus(1) # Rev 2 Pi, Pi 2 & Pi 3 uses bus 1
                      # Rev 1 Pi uses bus 0

@@ -21,9 +21,10 @@ module.exports = NodeHelper.create({
 		if (notification === 'REQUEST') {
 			const self = this
 			this.config = payload
+			var deviceAddr = this.config.deviceAddress;
 
 			// execute external DHT Script
-			exec("sudo ./modules/MMM-BME280/bme.sh ", (error, stdout) => {
+			exec(`sudo ./modules/MMM-BME280/bme.sh ${deviceAddr} `, (error, stdout) => {
 				if (error) {
 					console.error(`exec error: ${error}`);
 					return;

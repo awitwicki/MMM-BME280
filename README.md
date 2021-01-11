@@ -57,6 +57,13 @@ Configurations properties
 				<br><b>Default:</b> <code>100</code>
 			</td>
 		</tr>
+		<tr>
+			<td><code>deviceAddress</code></td>
+			<td>BME280 I2C address, default is 0x76
+				<br><b>Type:</b> <code>hex string</code>
+				<br><b>Default:</b> <code>"0x76"</code>
+			</td>
+		</tr>
 	</tbody>
 </table>
 
@@ -74,6 +81,7 @@ For more details about BCM pin numbers check [here](http://www.raspberrypi-spy.c
 `sudo chmod +x modules/MMM-BME280/bme.sh`.
 3. Script should print sensor values like this
 `24.7 38.3 996.6` - that means `temperature humidity pressure`
+4. If script prints `OSError: [Errno 121] Remote I/O error` then You are using wrong I2C address. Try to run `i2cdetect -y 1` console command to find out your device address.
 
 ### Thanks
 

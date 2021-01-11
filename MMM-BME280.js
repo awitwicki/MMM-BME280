@@ -3,7 +3,8 @@ Module.register("MMM-BME280", {
     // Default module config.
     defaults: {
         updateInterval: 100, // Seconds
-        titleText: "Home weather"
+        titleText: "Home weather",
+        deviceAddress: "0x76"
     },
 
     // Define start sequence.
