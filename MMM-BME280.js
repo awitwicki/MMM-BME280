@@ -74,7 +74,7 @@ Module.register("MMM-BME280", {
                             sufix = " hPa";
                             break;
                         case 1: // inHg
-                            val = Math.round(this.pressure / 33,864);
+                            val = Math.round(this.pressure * 100 / 33,864) / 100;
                             sufix = " inHg";
                             break;
                     }
