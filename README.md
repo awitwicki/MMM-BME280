@@ -64,6 +64,14 @@ Configurations properties
 				<br><b>Default:</b> <code>"0x76"</code>
 			</td>
 		</tr>
+		<tr>
+			<td><code>temperatureScaleType</code></td>
+			<td>Different temperature scales
+				<br><b>Type:</b> <code>int</code>
+				<br><b>Default:</b> <code>0</code>
+				<br><b>Scale types:</b> <code>0</code> Celsius, <code>1</code> Fahrenheit
+			</td>
+		</tr>
 	</tbody>
 </table>
 

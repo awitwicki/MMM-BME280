@@ -4,7 +4,8 @@ Module.register("MMM-BME280", {
     defaults: {
         updateInterval: 100, // Seconds
         titleText: "Home weather",
-        deviceAddress: "0x76"
+        deviceAddress: "0x76",
+        temperatureScaleType: 0 // Celsuis
     },
 
     // Define start sequence.
@@ -48,9 +49,17 @@ Module.register("MMM-BME280", {
 
             switch (i) {
                 case 0:
-                    val = this.temperature;
+                    switch (this.config.temperatureScaleType) {
+                        case 0: // Celsius
+                            val = this.temperature;
+                            sufix = "°C";
+                            break;
+                        case 1: // Fahrenheit
+                            val = Math.round(this.temperature * 9.0 / 5.0 + 32.0);
+                            sufix = "°F";
+                            break;
+                    }
                     icon_img = "temperature-high";
-                    sufix = "°C";
                     break;
                 case 1:
                     val = this.humidity;
@@ -66,7 +75,7 @@ Module.register("MMM-BME280", {
 
             var tr = document.createElement('tr');
             var icon = document.createElement("i");
-           
+
             icon.className = 'fa fa-' + icon_img + ' bme-icon';
 
             var text_div = document.createElement("div");
