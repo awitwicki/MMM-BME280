@@ -5,7 +5,8 @@ Module.register("MMM-BME280", {
         updateInterval: 100, // Seconds
         titleText: "Home weather",
         deviceAddress: "0x76",
-        temperatureScaleType: 0 // Celsuis
+        temperatureScaleType: 0, // Celsuis
+        pressureScaleType: 0 // hPa
     },
 
     // Define start sequence.
@@ -67,9 +68,17 @@ Module.register("MMM-BME280", {
                     sufix = "%";
                     break;
                 case 2:
-                    val = this.pressure;
+                    switch (this.config.pressureScaleType) {
+                        case 0: // hPa
+                            val = this.pressure;
+                            sufix = " hPa";
+                            break;
+                        case 1: // inHg
+                            val = Math.round(this.pressure / 33,864);
+                            sufix = " inHg";
+                            break;
+                    }
                     icon_img = "tachometer-alt";
-                    sufix = "hPa";
                     break;
             }
 
