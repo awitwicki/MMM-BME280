@@ -8,7 +8,7 @@ It monitors temperature, humidity and air pressure from [BME-280 sensor](https:/
 ## Installation
 1. Navigate into your MagicMirror's `modules` folder
 2. Clone repository `git clone https://github.com/awitwicki/MMM-BME280`
-3. Go to newly created directory
+3. Go to newly created directory (`cd MMM-BME280`)
 4. Execute `npm install` to install the node dependencies.
 5. Connect the BME280 to your Raspberry Pi
 <img src=".github/connect.jpg">
@@ -91,13 +91,12 @@ For more details about BCM pin numbers check [here](http://www.raspberrypi-spy.c
 - `smbus` (Python library, install via `pip3 install smbus` )
 
 ### Test BME280 module
-1. Navigate into your **MagicMirror**  folder
-2. Run .sh script `./modules/MMM-BME280/bme.sh`
-(If script doesn't run, add exec parameter to it)
-`sudo chmod +x modules/MMM-BME280/bme.sh`.
-3. Script should print sensor values like this
-`24.7 38.3 996.6` - that means `temperature humidity pressure`
-4. If script prints `OSError: [Errno 121] Remote I/O error` then You are using wrong I2C address. Try to run `i2cdetect -y 1` console command to find out your device address.
+1. Navigate into your `MagicMirror/modules/MMM-BME280` folder
+2. Run script `python3 bme280.py <"optional I2C address">`
+   - If you get `FileNotFoundError: [Errno 2] No such file or directory` you habe to enable i2c interface (`raspi-config nonint do_i2c 0`)
+   - If script prints `OSError: [Errno 121] Remote I/O error` then you are using wrong I2C address. Try to run `i2cdetect -y 1` console command to find out your device address.
+3. Script should print sensor values like this `24.7 38.3 996.6` - that means `temperature humidity pressure`
+   - If you only see `0 0 0` make sure you are not setting the PINs you are using in another program. 
 
 ### Thanks
 
