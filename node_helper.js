@@ -24,7 +24,7 @@ module.exports = NodeHelper.create({
 			var deviceAddr = this.config.deviceAddress;
 
 			// execute external DHT Script
-			exec(`sudo ./modules/MMM-BME280/bme.sh ${deviceAddr} `, (error, stdout) => {
+			exec(`python3 ./modules/MMM-BME280/bme280.py ${deviceAddr}`, (error, stdout) => {
 				if (error) {
 					console.error(`exec error: ${error}`);
 					return;
