@@ -92,7 +92,7 @@ For more details about BCM pin numbers check [here](http://www.raspberrypi-spy.c
 
 ### Test BME280 module
 1. Navigate into your `MagicMirror/modules/MMM-BME280` folder
-2. Run script `python3 bme280.py`
+2. Run script `python3 bme280.py <"optional I2C address">`
    - If you get `FileNotFoundError: [Errno 2] No such file or directory` you habe to enable i2c interface (`sudo raspi-config` > Interfacing Options > I2C > Enable)
    - If script prints `OSError: [Errno 121] Remote I/O error` then you are using wrong I2C address. Try to run `i2cdetect -y 1` console command to find out your device address.
 3. Script should print sensor values like this `24.7 38.3 996.6` - that means `temperature humidity pressure`
