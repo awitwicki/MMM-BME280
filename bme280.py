@@ -18,7 +18,7 @@
 # https://www.raspberrypi-spy.co.uk/
 #
 #--------------------------------------
-import smbus
+import smbus2
 import sys
 import time
 from ctypes import c_short
